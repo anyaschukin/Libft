@@ -16,51 +16,62 @@
  */
 
 #include <stdio.h>
-#include "libft.h"
+#include <stdlib.h>
 
-int	count_digits(int num)
+int ft_count(int num)
 {
-	int digits;
-	digits = 0;
-
-	while (num > 0)
-	{
-		digits++;
-		num = num / 10;
-	}
-	return (digits);
+    int count;
+    count = 0;
+    
+    if (num <= 0)
+    {
+        count = count + 1;
+    }
+    while (num != 0)
+    {
+        count++;
+        num = num / 10;
+    }
+    
+    return count;
 }
 
-char *ft_itoa(int num, char *str, int base)
+char *ds_itoa(int num)
 {
-	int digits;
-	int i;
-
-	if (num < 0)
-	{
-		str[0] = '-';
+    char *str;
+    int count; 
+    int i;
+    
+    count = ft_count(num);
+    str = (char *) malloc(count * sizeof(char));
+    i = count - 1;  // i is intialized as last character index of *str
+    
+    if (num == 0)
+    {
+        str[0] = '0';
+    }
+    if (num < 0)
+    {
+        str[0] = '-';
 		num = -num;
-		digits = 1;
-	}
-	else 
-	{
-		digits = 0;
-	}
-	digits = digits + count_digits(num);
-	i = digits - 1;
-	while (num > 0 )
-	{
-		str[i] = '0' + (num % 10);
-		num = num / 10;
-		i--;
-	}
-	str[digits]= '\0';
-	return (str);
+    } 
+    
+    while (num > 0)
+    {
+        str[i] = '0' + (num % 10);
+        num = num / 10;
+        i--;
+    }
+    
+    str[count] = '\0';
+    
+    return str;
 }
 
-int	main(void)
+int main(void)
 {
-	int num = 109;
-	char str[100];
-	int 
+    int num = -45.6;
+    printf("My function: '%s' \n", ds_itoa(num));
+    //printf("C Standard: %s \n", itoa(num));
+    return 0;
 }
