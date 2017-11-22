@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s)
 			end--;
 		}
 	fresh = ft_strnew(end - start);
-	if (new == NULL)
+	if (fresh == NULL)
 		return (NULL);
 	fresh = ft_strncpy(fresh, s + start, end - start);
 	return (fresh);
