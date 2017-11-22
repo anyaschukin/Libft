@@ -6,9 +6,12 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 16:35:33 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/17 14:30:27 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/21 18:32:22 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
 char	*ft_strstr(char *str, char *to_find)
 {
 	int i;

@@ -6,11 +6,13 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 15:44:33 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 17:01:05 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:15:23 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include "libft.h"
+
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int i;
 

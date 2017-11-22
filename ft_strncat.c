@@ -6,9 +6,11 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 15:49:58 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 17:01:51 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 11:46:40 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strncat(char *dest, char *src, int nb)
 {
@@ -27,7 +29,7 @@ char	*ft_strncat(char *dest, char *src, int nb)
 		i++;
 		j++;
 		if (j >= nb)
-		break ;
+			break ;
 	}
 	dest[i] = '\0';
 	return (dest);

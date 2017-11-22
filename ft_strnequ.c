@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 15:40:53 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:23:36 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/22 10:34:01 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/22 11:55:04 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
- * copies len bytes of value of c (converted to an unsigned char)
- * to the string b.
- * Returns: function returns its first argument
+/* Lexicographical comparison between s1 and s2 up to n characters
+ * or until a ’\0’ is reached.
+ * If the 2 strings are identical the function returns 1, or 0 otherwise.
  */
 
 #include "libft.h"
 
-void *ft_memset(void *b, int c, size_t len)
+int ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	char *p;
-	size_t i;
+	int i;
 
-	p = (char*) b;
 	i = 0;
-	while (i < len)
+	if (s1 || s2)
 	{
-		p[i] = (char)c;
-		i++;
+		if (ft_strlen(s1) != ft_strlen(s2))
+			return (0);
+		while (s1[i])
+		{
+			if (s1[i] != s2[i])
+				return (0);
+			if (i >= n)
+				break ;
+			i++;
+		}
+		return (1);
 	}
-	return (b);
+	return (0);
 }

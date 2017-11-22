@@ -6,7 +6,7 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 14:16:02 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/20 15:59:57 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 16:02:05 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,4 @@ void	ft_putnbr(int nb)
 	}
 	else
 		ft_putchar(a + '0');
-}
-
-int	main(void)
-{
-	int nb = 145;
-	ft_putnbr(nb);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 10:37:31 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/20 10:43:29 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/21 18:21:04 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
  * their allotted space.
  */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -39,14 +38,4 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
-}
-
-int main(void)
-{
-	char *s1 = "Unicorn";
-	char *s2 = "Uni";
-	size_t n = 5;
-	printf("My function: %d \n", ft_memcmp(s1, s2, n));
-	printf("C Standard: %d \n", memcmp(s1, s2, n));
-	return 0;
 }

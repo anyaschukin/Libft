@@ -6,16 +6,18 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 15:36:45 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 17:00:37 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 11:12:44 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }

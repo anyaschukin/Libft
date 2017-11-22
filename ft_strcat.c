@@ -6,11 +6,13 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 15:48:02 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 17:01:37 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:16:39 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+#include "libft.h"
+
+char	*ft_strcat(char *dest, const char *src)
 {
 	int i;
 	int j;

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 10:22:00 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:21:55 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/21 10:39:42 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/21 18:22:09 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_memdel(void **ap)
 {
-	char*	newdst;
-	const char*	newsrc;
-
-	newdst = dst;
-	newsrc = src;
-	while (n > 0)
+	if (*ap)
 	{
-		*newdst++ = *newsrc++;
-		n--;
+		free(*ap);
+		*ap = NULL;
 	}
-	return (dst);
 }

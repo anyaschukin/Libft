@@ -6,12 +6,11 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 18:55:37 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 16:30:19 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/21 18:12:18 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
@@ -23,11 +22,4 @@ int	ft_isalnum(int c)
 		return (1);
 	else
 		return (0);
-}
-
-int	main(void)
-{
-	printf("My function: %d\n", ft_isalnum(120));
-	printf("C Standard function: %d\n", isalnum(120));
-	return (0);
 }

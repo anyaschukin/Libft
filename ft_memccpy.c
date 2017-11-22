@@ -6,7 +6,7 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 10:23:40 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/20 10:30:15 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/21 18:17:42 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@
  *if c was not found in the first n bytes of s2, it returns a null pointer.
  */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-void*	ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char*	newdst;
-	const char*	newsrc;
+	char	*newdst;
+	const char	*newsrc;
 	char a;
 	unsigned long i;
 
@@ -45,17 +44,4 @@ void*	ft_memccpy(void *dst, const void *src, int c, size_t n)
 		i++;
 	}
 	return (dst);
-}
-
-int main(void)
-{
-
-
-	char dst[20] = "onetwishanhdirkshjit";
-	const char *src = "Unicorn";
-	int c = 'i';
-	size_t n = 5;
-	printf("My function: %s \n", (char *) ft_memccpy(dst, src, c, n));
-	printf("C Standard: %s \n", (char *) memccpy(dst, src, c, n));    
-	return 0;
 }

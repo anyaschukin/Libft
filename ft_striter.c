@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 10:22:00 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:21:55 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/21 14:59:45 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/21 15:39:22 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ *Applies function f to each chararacter passed of the string
+ *passed as an argument.
+ *Each character is passed by address to f to be modified if necessary.
+ */
+
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	char*	newdst;
-	const char*	newsrc;
+	int i;
 
-	newdst = dst;
-	newsrc = src;
-	while (n > 0)
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
 	{
-		*newdst++ = *newsrc++;
-		n--;
+		(*f)(&(s[i])); //applies function to alter character by address
+		i++;
 	}
-	return (dst);
 }

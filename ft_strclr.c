@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 10:22:00 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:21:55 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/21 14:52:37 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/21 15:20:56 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_strclr(char *s)
 {
-	char*	newdst;
-	const char*	newsrc;
+	int i;
 
-	newdst = dst;
-	newsrc = src;
-	while (n > 0)
+	i = 0;
+	while (*s)
 	{
-		*newdst++ = *newsrc++;
-		n--;
+		s[i] = '\0';
+		i++;
 	}
-	return (dst);
 }

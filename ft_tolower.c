@@ -6,12 +6,11 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 18:11:17 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 16:59:26 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/21 18:32:44 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {
@@ -21,10 +20,4 @@ int	ft_tolower(int c)
 		return (c);
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	printf("My function: %d\n", ft_tolower(78));
-	printf("C Stand	ard: %d\n", tolower(78));
 }

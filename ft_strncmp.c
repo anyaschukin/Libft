@@ -6,13 +6,15 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 17:44:12 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 17:05:14 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 11:54:56 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
 	while (s1[i])

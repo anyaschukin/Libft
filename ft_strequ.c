@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 10:22:00 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:21:55 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/21 14:47:48 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/22 11:17:53 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Lexicographical comparison between s1 and s2. 
+ * If the 2 strings are identical the function returns 1, or 0 otherwise.
+ */
+
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int ft_strequ(char const *s1, char const *s2)
 {
-	char*	newdst;
-	const char*	newsrc;
+	int i;
 
-	newdst = dst;
-	newsrc = src;
-	while (n > 0)
+	i = 0;
+	if (s1 || s2)
 	{
-		*newdst++ = *newsrc++;
-		n--;
+		if (ft_strlen(s1) != ft_strlen(s2))
+			return (0);
+		while (s1[i])
+		{
+			if (s1[i] != s2[i])
+				return (0);
+			i++;
+		}
+		return (1);
 	}
-	return (dst);
+	return (0);
 }

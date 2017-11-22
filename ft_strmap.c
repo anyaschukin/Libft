@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 10:22:00 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:21:55 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/21 15:39:39 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/21 18:07:10 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char*	newdst;
-	const char*	newsrc;
+	size_t size;
+	char *fresh;
+	int i;
 
-	newdst = dst;
-	newsrc = src;
-	while (n > 0)
+	size = ft_strlen((char *)s);
+	if (!(fresh = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	i = 0;
+	if (!s || !f)
+		return (0);
+	while (s[i])
 	{
-		*newdst++ = *newsrc++;
-		n--;
+		fresh[i] = (*f)(s[i]);
+		i++;
 	}
-	return (dst);
+	fresh[i] = '\0';
+	return (fresh);
 }

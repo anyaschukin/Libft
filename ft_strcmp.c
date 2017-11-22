@@ -6,20 +6,18 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 17:42:38 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/15 17:03:56 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 11:53:50 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (s1[i])
-	{
-		if (s1[	i] != s2[i])
-			break ;
-		i++;
-	}
-	return (s1[i] - s2[i]);
+int    ft_strcmp(const char *s1, const char *s2)
+{
+	unsigned int x;
+
+	x = 0;
+	while (s1[x] && s2[x] && s1[x] == s2[x])
+		x++;
+	return (((unsigned char *)s1)[x] - ((unsigned char *)s2)[x]);
 }

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 10:22:00 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:21:55 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/21 15:21:17 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/22 09:52:18 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Applies the function f to each character of the string passed as argument,
+ * and passing its index as first argument. Each character is passed
+ * by address to f to be modified if necessary.
+ */
+
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char*	newdst;
-	const char*	newsrc;
+	unsigned int i;
 
-	newdst = dst;
-	newsrc = src;
-	while (n > 0)
+	if (!s || !f)
+		return ;
+	while (s[i])
 	{
-		*newdst++ = *newsrc++;
-		n--;
+		(*f)(i, &(s[i]));
+		i++;
 	}
-	return (dst);
 }

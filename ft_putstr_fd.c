@@ -6,12 +6,11 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 15:47:37 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/20 15:52:45 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/22 16:03:07 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {

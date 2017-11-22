@@ -6,7 +6,7 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:08:54 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/20 13:40:25 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/21 18:15:51 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,54 @@
  * char *str is where we'll store it.
  */
 
-#include <stdio.h>
 #include "libft.h"
 
-int	count_digits(int num)
+int ft_count(int num)
 {
-	int digits;
-	digits = 0;
+	int count;
+	count = 0;
 
-	while (num > 0)
+	if (num <= 0)
 	{
-		digits++;
+		count = count + 1;
+	}
+	while (num != 0)
+	{
+		count++;
 		num = num / 10;
 	}
-	return (digits);
+
+	return count;
 }
 
-char *ft_itoa(int num, char *str, int base)
+char *ds_itoa(int num)
 {
-	int digits;
+	char *str;
+	int count; 
 	int i;
 
+	count = ft_count(num);
+	str = (char *) malloc(count * sizeof(char));
+	i = count - 1;  // i is intialized as last character index of *str
+
+	if (num == 0)
+	{
+		str[0] = '0';
+	}
 	if (num < 0)
 	{
 		str[0] = '-';
 		num = -num;
-		digits = 1;
-	}
-	else 
-	{
-		digits = 0;
-	}
-	digits = digits + count_digits(num);
-	i = digits - 1;
-	while (num > 0 )
+	} 
+
+	while (num > 0)
 	{
 		str[i] = '0' + (num % 10);
 		num = num / 10;
 		i--;
 	}
-	str[digits]= '\0';
-	return (str);
-}
 
-int	main(void)
-{
-	int num = 109;
-	char str[100];
-	int 
+	str[count] = '\0';
+
+	return str;
 }
