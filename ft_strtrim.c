@@ -23,27 +23,25 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char *smax;
-	char *smin;
+	size_t start;
+	size_t end;
 	char *fresh;
 	int i;
 
 	i = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	start = 0;
+	end = ft_strlen(s);
+	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
 		{
-			i++;
+			start++;
 		}
-	smin = s[i];
-	while (!(s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+	while (!(s[end - 1] == ' ' || s[end - 1] == '\n' || s[end - 1] == '\t'))
 		{
-			i++;
+			end--;
 		}
-	smax = s[i];
-	if(!(fresh = (smax - smin + 2) * sizeof(char)))
+	fresh = ft_strnew(end - start);
+	if (new == NULL)
 		return (NULL);
-	while (smin <= smax)     // fill in your fresh string with s1
-	{
-
-	}
+	fresh = ft_strncpy(fresh, s + start, end - start);
 	return (fresh);
 }	
