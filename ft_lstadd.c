@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 16:52:48 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/25 18:38:14 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/27 18:21:02 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/27 20:10:15 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	ft_memdel((void **)as);
+	if (alst == NULL || new == NULL)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

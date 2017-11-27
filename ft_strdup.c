@@ -6,41 +6,32 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 15:40:39 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/22 17:23:02 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/24 11:09:29 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * The strdup() function allocates sufficient memory for a copy
- * of the string s1, does the copy, and returns a pointer to it.
- */
+** The strdup() function allocates sufficient memory for a copy
+** of the string s1, does the copy, and returns a pointer to it.
+*/
 
 #include "libft.h"
 
-size_t ft_strlen(const char *src)
+char	*ft_strdup(const char *s1)
 {
-	int n;
-	n = 0;
-	while (src[n] != '\0')
-	{
-		n++;
-	}
-	return (n);
-}
-
-char *ft_strdup(const char *s1)
-{
-	int i;
-	int n;
-	char *s2;
+	int		i;
+	int		n;
+	char	*s2;
 
 	i = 0;
 	n = ft_strlen(s1);
-	s2 = malloc(n * sizeof(char));
+	if (!(s2 = malloc((n + 1) * sizeof(char))))
+		return (NULL);
 	while (i < n)
 	{
 		s2[i] = s1[i];
 		i++;
 	}
+	s2[i] = '\0';
 	return (s2);
 }

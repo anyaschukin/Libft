@@ -6,25 +6,26 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 17:27:29 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:11:00 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/25 13:48:34 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Writes n zeroed bytes into the string s
- * If n is zero, bzero() does nothing
- */
+/*
+** Writes n zeroed bytes into the string s
+** If n is zero, bzero() does nothing
+*/
 
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *c;
-	size_t i;
+	char	*c;
+	size_t	i;
 
-	c = (char*) s;
+	c = (char*)s;
 	i = 0;
 	while (i < n)
-	{	
+	{
 		c[i] = '\0';
 		i++;
 	}

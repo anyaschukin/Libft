@@ -6,13 +6,13 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 17:42:38 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/22 11:53:50 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/23 10:13:32 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned int x;
 

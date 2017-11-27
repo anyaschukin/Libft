@@ -6,18 +6,17 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 18:00:35 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/21 18:33:11 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/25 12:10:47 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if (c >=  97 && c <= 122)
+	if (c >= 'a' && c <= 'z')
 	{
-		c = c - 32;
-		return (c);
+		return (c - 32);
 	}
-	return (0);
+	return (c);
 }

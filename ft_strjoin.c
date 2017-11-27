@@ -6,19 +6,19 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 14:29:53 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/22 15:30:55 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/23 10:47:05 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Allocates (with malloc(3)) and returns a “fresh” string ending
- * with ’\0’, result of the concatenation of s1 and s2. 
- * If the allocation fails the function returns NULL.
- */
+** Allocates (with malloc(3)) and returns a “fresh” string ending
+** with ’\0’, result of the concatenation of s1 and s2.
+** If the allocation fails the function returns NULL.
+*/
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *fresh;
 

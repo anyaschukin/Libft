@@ -6,13 +6,11 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 14:16:02 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:05 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/23 10:50:17 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar(char c);
 
 void	ft_putnbr(int nb)
 {

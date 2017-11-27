@@ -5,68 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 16:00:07 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/20 15:28:41 by aschukin         ###   ########.fr       */
+/*   Created: 2017/11/25 18:02:11 by aschukin          #+#    #+#             */
+/*   Updated: 2017/11/27 19:01:40 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-size_t	*ft_strncat(char *dst, const char *src, size_t size)
-{
-	int i;
-	int j;
 
+/*
+** Appends the NUL-terminated string src to the end of dst.
+** Will append at most size- strlen(dst) - 1 bytes, NUL-terminating the result.
+** Source and destination strings should not overlap.
+** Returns: the intial length of dst + the length of src.
+*/
+
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	unsigned int	lendst;
+	unsigned int	lensrc;
+	unsigned int	i;
+
+	lendst = 0;
+	lensrc = 0;
 	i = 0;
-	j = 0;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-	char *d = dst;
-	const char *s = src;
-	size_t n = size;
-	size_t dlen;
-
-	while (n-- != 0 && *d != '\0')
-		d++;
-	dlen = d - dst;
-	n = size - dlen;
-
-	if (n == 0)
+	while (dst[lendst])
+		lendst++;
+	while (src[lensrc])
+		lensrc++;
+	if (size == 0)
+		return (lensrc);
+	while (src[i] && ((lendst + i) < (size - 1)))
 	{
-		return (dlen + ft_strlen(s));
+		dst[lendst + i] = src[i];
+		i++;
 	}
-	while (*s != '\0')
-	{
-		if (n != 1)
-		{
-			*d++ = *s;
-			n--;
-		}
-		s++;
-	}
-	*d = '\0';
-	return (dlen + s - src));
+	dst[lendst + i] = '\0';
+	return (lensrc + ((lendst < size) ? lendst : size));
 }

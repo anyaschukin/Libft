@@ -6,20 +6,21 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 10:34:01 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/22 11:55:04 by aschukin         ###   ########.fr       */
+/*   Updated: 2017/11/27 20:46:12 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Lexicographical comparison between s1 and s2 up to n characters
- * or until a ’\0’ is reached.
- * If the 2 strings are identical the function returns 1, or 0 otherwise.
- */
+/*
+** Lexicographical comparison between s1 and s2 up to n characters
+** or until a ’\0’ is reached.
+** If the 2 strings are identical the function returns 1, or 0 otherwise.
+*/
 
 #include "libft.h"
 
-int ft_strnequ(char const *s1, char const *s2, size_t n)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	if (s1 || s2)
@@ -31,7 +32,7 @@ int ft_strnequ(char const *s1, char const *s2, size_t n)
 			if (s1[i] != s2[i])
 				return (0);
 			if (i >= n)
-				break ;
+				return (1);
 			i++;
 		}
 		return (1);
