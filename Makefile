@@ -6,7 +6,7 @@
 #    By: aschukin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/15 17:33:54 by aschukin          #+#    #+#              #
-#    Updated: 2017/11/28 11:27:22 by aschukin         ###   ########.fr        #
+#    Updated: 2017/11/28 18:40:03 by aschukin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = ft_atoi.c \
 	   ft_isprint.c \
 	   ft_itoa.c \
 	   ft_lstadd.c \
+	   ft_lstcount.c \
 	   ft_lstdel.c \
 	   ft_lstdelone.c \
 	   ft_lstiter.c \
@@ -45,6 +46,7 @@ SRCS = ft_atoi.c \
 	   ft_putnbr_fd.c \
 	   ft_putstr.c \
 	   ft_putstr_fd.c \
+	   ft_strcapitalize.c \
 	   ft_strcat.c \
 	   ft_strlcat.c \
 	   ft_strchr.c \
@@ -67,6 +69,7 @@ SRCS = ft_atoi.c \
 	   ft_strnew.c \
 	   ft_strnstr.c \
 	   ft_strrchr.c \
+	   ft_strrev.c \
 	   ft_strsplit.c \
 	   ft_strstr.c \
 	   ft_strsub.c \
@@ -85,9 +88,6 @@ $(NAME):
 		ar rc $(NAME) $(OBJ)
 		ranlib libft.a
 
-test: all
-	gcc $(FLAGS) main.c -L -lft
-
 clean :
 	rm -rf $(OBJ)
 
@@ -96,4 +96,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean re test
+.PHONY : all clean fclean re
