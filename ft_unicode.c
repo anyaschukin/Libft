@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_unicode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 14:16:02 by aschukin          #+#    #+#             */
-/*   Updated: 2018/03/27 14:54:15 by aschukin         ###   ########.fr       */
+/*   Created: 2018/03/14 13:32:58 by aschukin          #+#    #+#             */
+/*   Updated: 2018/04/09 15:58:48 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(long long nb)
+char	*ft_unicode(wchar_t c)
 {
-	long long a;
+	char	*str;
 
-	a = nb;
-	if (a < 0)
+	str = ft_strnew(4);
+	if (c <= 0x7F)
+		str[0] = c;
+	else if (c <= 0x7FF)
 	{
-		ft_putchar('-');
-		a = a * -1;
+		str[0] = (c >> 6) + 0xC0;
+		str[1] = (c & 0x3F) + 0x80;
 	}
-	if (a >= 10)
+	else if (c < 0xFFFF)
 	{
-		ft_putnbr(a / 10);
-		ft_putnbr(a % 10);
+		str[0] = (c >> 12) + 0xE0;
+		str[1] = ((c >> 6) & 0x3F) + 0x80;
+		str[2] = (c & 0x3F) + 0x80;
 	}
 	else
-		ft_putchar(a + '0');
+	{
+		str[0] = ((c >> 18) + 0xF0);
+		str[1] = ((c >> 12) & 0x3F) + 0x80;
+		str[2] = ((c >> 6) & 0x3F) + 0x80;
+		str[3] = (c & 0x3F) + 0x80;
+	}
+	return (str);
 }

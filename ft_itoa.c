@@ -6,7 +6,7 @@
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:08:54 by aschukin          #+#    #+#             */
-/*   Updated: 2017/11/27 19:32:17 by aschukin         ###   ########.fr       */
+/*   Updated: 2018/04/09 16:02:16 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,45 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int num)
+static char	*negative_case(intmax_t num, char *str, int i, int count)
 {
-	char	*str;
-	int		count;
-	int		i;
+	uintmax_t neg;
+
+	str[0] = '-';
+	neg = -num;
+	while (neg > 0)
+	{
+		str[i] = '0' + (neg % 10);
+		neg = neg / 10;
+		i--;
+	}
+	str[count] = '\0';
+	return (str);
+}
+
+char		*ft_itoa(intmax_t num)
+{
+	char		*str;
+	int			count;
+	int			i;
 
 	count = ft_count(num);
 	if (!(str = (char *)malloc((count + 1) * sizeof(char))))
 		return (NULL);
 	i = count - 1;
-	if (num == -2147483648)
-		return (ft_strdup("-2147483648"));
 	if (num == 0)
 		str[0] = '0';
 	if (num < 0)
 	{
-		str[0] = '-';
-		num = -num;
+		return (negative_case(num, str, i, count));
 	}
-	while (num > 0)
-	{
-		str[i] = '0' + (num % 10);
-		num = num / 10;
-		i--;
-	}
+	else
+		while (num > 0)
+		{
+			str[i] = '0' + (num % 10);
+			num = num / 10;
+			i--;
+		}
 	str[count] = '\0';
 	return (str);
 }

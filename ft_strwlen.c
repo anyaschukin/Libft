@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strwlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 17:27:29 by aschukin          #+#    #+#             */
-/*   Updated: 2018/03/31 16:15:09 by aschukin         ###   ########.fr       */
+/*   Created: 2018/03/14 14:42:03 by aschukin          #+#    #+#             */
+/*   Updated: 2018/04/09 15:58:09 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Writes n zeroed bytes into the string s
-** If n is zero, bzero() does nothing
-*/
-
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+intmax_t	ft_strwlen(char *str)
 {
-	char	*c;
-	size_t	i;
+	intmax_t	len;
+	int			i;
 
-	c = (char*)s;
+	len = 0;
 	i = 0;
-	while (i < n)
+	while (str[i] != '\0')
 	{
-		c[i] = '\0';
+		if ((int)str[i] <= 0x7F)
+			len++;
+		else if ((int)str[i] <= 0x7FF)
+			len += 2;
+		else if ((int)str[i] <= 0x7FFF)
+			len += 3;
+		else
+			len += 4;
 		i++;
 	}
+	return (len);
 }

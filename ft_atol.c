@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 17:27:29 by aschukin          #+#    #+#             */
-/*   Updated: 2018/03/31 16:15:09 by aschukin         ###   ########.fr       */
+/*   Created: 2018/06/11 09:48:30 by aschukin          #+#    #+#             */
+/*   Updated: 2018/06/11 09:56:03 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Writes n zeroed bytes into the string s
-** If n is zero, bzero() does nothing
-*/
-
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+long	ft_atol(char *str)
 {
-	char	*c;
-	size_t	i;
+	long	num;
+	int		i;
+	int		len;
+	int		sign;
 
-	c = (char*)s;
+	num = 0;
 	i = 0;
-	while (i < n)
-	{
-		c[i] = '\0';
+	len = 0;
+	sign = 1;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+			|| str[i] == '\f')
 		i++;
+	str[i] == '-' ? (sign = -1) : 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] == '0')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - '0');
+		i++;
+		len++;
 	}
+	return (num * sign);
 }

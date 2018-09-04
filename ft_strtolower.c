@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtolower.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 17:27:29 by aschukin          #+#    #+#             */
-/*   Updated: 2018/03/31 16:15:09 by aschukin         ###   ########.fr       */
+/*   Created: 2018/03/13 17:48:45 by aschukin          #+#    #+#             */
+/*   Updated: 2018/03/13 17:49:34 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Writes n zeroed bytes into the string s
-** If n is zero, bzero() does nothing
-*/
-
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strtolower(char *str)
 {
-	char	*c;
-	size_t	i;
+	int	i;
 
-	c = (char*)s;
-	i = 0;
-	while (i < n)
-	{
-		c[i] = '\0';
-		i++;
-	}
+	i = -1;
+	while (str[++i])
+		str[i] = ft_tolower(str[i]);
+	return (str);
 }

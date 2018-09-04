@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 /*
-** The memchr() function returns a pointer to the located character,
+** The memchr() function scans the intial n bytes of memory pointed to by s
+** for the first instance of c. Returns a pointer to the located character,
 ** or a null pointer if the character does not occur in the object.
 */
 

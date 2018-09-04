@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strunicode.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschukin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 17:27:29 by aschukin          #+#    #+#             */
-/*   Updated: 2018/03/31 16:15:09 by aschukin         ###   ########.fr       */
+/*   Created: 2018/03/16 15:09:54 by aschukin          #+#    #+#             */
+/*   Updated: 2018/04/05 15:47:01 by aschukin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Writes n zeroed bytes into the string s
-** If n is zero, bzero() does nothing
-*/
-
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
-{
-	char	*c;
-	size_t	i;
+/*
+** Takes a unicode string as argument,
+** reads through the unicode character by character (calling ft_unicode),
+** and stores/returns a unicode/wchar_t string
+*/
 
-	c = (char*)s;
+char	*ft_strunicode(wchar_t *s)
+{
+	int		i;
+	char	*str;
+	char	*tmp;
+	char	*del;
+
+	if (!s || !(str = ft_strnew(0)))
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		c[i] = '\0';
+		del = str;
+		tmp = ft_unicode(s[i]);
+		str = ft_strjoin_free(str, tmp, 3);
 		i++;
 	}
+	return (str);
 }
