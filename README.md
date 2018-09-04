@@ -6,7 +6,7 @@
 
 Create your own personal library. 
 
-For 42 students, using normal library functions (like ```atoi```, ```strdup```, ```strjoin```, etc.) is strictly forbidden. Students must write all their own functions from scratch. The functions created in **Libft** will become the basic building blocks of later programs and projects. <br />
+At 42, using normal library functions (like ```atoi```, ```strdup```, ```strjoin```, etc.) is strictly forbidden. Students must write all their own functions from scratch. The functions created in **Libft** will become the basic building blocks of later programs and projects. <br />
 
 **Libft** must conform to the [42 Norm](https://cdn.intra.42.fr/pdf/pdf/960/norme.en.pdf). Errors must be handled carefully. <br />
 In no way can it quit in an unexpected manner (segmentation fault, bus error, double free, etc),  apart from undefined behaviors.
