@@ -4,7 +4,7 @@
 
 ## Challenge
 
-Create your own basic library. 
+Create your own personal library. 
 
 For 42 students, using normal library functions (like ```atoi```, ```strdup```, ```strjoin```, etc.) is strictly forbidden. Students must write all their own functions from scratch. The functions created in **Libft** will become the basic building blocks of later programs and projects. <br />
 
